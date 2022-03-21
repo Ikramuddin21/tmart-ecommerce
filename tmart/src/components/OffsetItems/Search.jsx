@@ -1,41 +1,49 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
 const Search = ({ setToggleSearch }) => {
-  const [searchText, setSearchText] = useState("");
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+    const [searchText, setSearchText] = useState("");
 
-    // Collect the text
+    const handleSearch = e => {
+        e.preventDefault();
 
-    // Hit the API
+        console.log(searchText);
+        // Collect the text
 
-    setSearchText("");
-    setToggleSearch(false);
-  };
+        // Hit the API
 
-  return (
-    <div className="search__area">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="search__inner">
-              <form onSubmit={handleSearch}>
-                <input placeholder="Search here... " type="text" onChange={(e) => setSearchText(e.target.value)} />
-                <button type="submit"></button>
-              </form>
+        setSearchText("");
+        setToggleSearch(false);
+    };
 
-              <div className="search__close__btn">
-                <span className="search__close__btn_icon" onClick={() => setToggleSearch(false)}>
-                  <i className="zmdi zmdi-close"></i>
-                </span>
-              </div>
+    return (
+        <div className="search__area">
+            <div className="container" >
+                <div className="row" >
+                    <div className="col-md-12" >
+                        <div className="search__inner">
+                            <form onSubmit={handleSearch}>
+                                <input
+                                    type="text"
+                                    placeholder="Search here..."
+                                    onChange={(e) => setSearchText(e.target.value)}
+                                />
+                                <button type="submit"></button>
+                            </form>
+                            <div className="search__close__btn">
+                                <span
+                                    className="search__close__btn_icon"
+                                    onClick={() => setToggleSearch(false)}
+                                >
+                                    <i className="zmdi zmdi-close"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Search;

@@ -1,11 +1,12 @@
-import Header from "../components/partials/Header";
+import React from 'react';
+import Header from '../components/partials/Header';
 
 const Home = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
+    return (
+        <div>
+            <Header />
+        </div>
+    );
 };
 
 export default Home;
